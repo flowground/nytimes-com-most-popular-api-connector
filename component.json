@@ -1,0 +1,90 @@
+{
+    "title": "Most Popular",
+    "description": "Get lists of NYT Articles based on shares, emails, and views.",
+    "docsUrl": "http://developer.nytimes.com/",
+    "url": "https://api.apis.guru/v2/specs/nytimes.com/most_popular_api/2.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.nytimes.com/svc/mostpopular/v2",
+                    "https://api.nytimes.com/svc/mostpopular/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api-key": {
+                "label": "api-key (api-key)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "GET_mostemailed_section_time_period_json": {
+            "main": "./lib/actions/GET_mostemailed_section_time_period_json.js",
+            "title": "Most Emailed by Section & Time Period",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_mostemailed_section_time_period_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_mostshared_section_time_period_json": {
+            "main": "./lib/actions/GET_mostshared_section_time_period_json.js",
+            "title": "Most Shared by Section & Time Period",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_mostshared_section_time_period_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_mostviewed_section_time_period_json": {
+            "main": "./lib/actions/GET_mostviewed_section_time_period_json.js",
+            "title": "Most Viewed by Section & Time Period",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_mostviewed_section_time_period_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "type": "object",
+    "properties": {
+        "section": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "Arts",
+                "Automobiles",
+                "Blogs",
+                "Books",
+                "Business Day",
+                "Education",
+                "Fashion & Style",
+                "Food",
+                "Health",
+                "Job Market",
+                "Magazine",
+                "membercenter",
+                "Movies",
+                "Multimedia",
+                "N.Y.%20%2F%20Region",
+                "NYT Now",
+                "Obituaries",
+                "Open",
+                "Opinion",
+                "Public Editor",
+                "Real Estate",
+                "Science",
+                "Sports",
+                "Style",
+                "Sunday Review",
+                "T Magazine",
+                "Technology",
+                "The Upshot",
+                "Theater",
+                "Times Insider",
+                "Today’s Paper",
+                "Travel",
+                "U.S.",
+                "World",
+                "Your Money",
+                "all-sections"
+            ]
+        },
+        "time_period": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "1",
+                "7",
+                "30"
+            ]
+        }
+    }
+}
